@@ -10,9 +10,8 @@
         "components"
     ],
     "scripts": {
-        "preinstall": "curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh -",
-        "prebuild": "export PNPM_HOME=\"$HOME/.local/share/pnpm\" && export PATH=\"$PNPM_HOME:$PATH\" && pnpm add turbo -g && pnpm --version && turbo --version",
-        "build": "pnpm turbo run build",
+        "prebuild": "curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh - && export PNPM_HOME=\"$HOME/.local/share/pnpm\" && export PATH=\"$PNPM_HOME/bin:$PNPM_HOME:$PATH\" && pnpm add turbo -g && pnpm --version && turbo --version",
+        "build": "export PNPM_HOME=\"$HOME/.local/share/pnpm\" && export PATH=\"$PNPM_HOME/bin:$PNPM_HOME:$PATH\" && pnpm turbo run build",
         "build-force": "pnpm clean && pnpm turbo run build --force",
         "dev": "pnpm turbo run dev --parallel",
         "start": "run-script-os",
