@@ -11,8 +11,9 @@
     ],
     "scripts": {
         "prebuild": "curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh - && export PNPM_HOME=\"$HOME/.local/share/pnpm\" && export PATH=\"$PNPM_HOME:$PATH\" && pnpm --version",
-        "build-force": "pnpm clean && turbo run build --force",
-        "dev": "turbo run dev --parallel",
+        "build": "pnpm turbo run build",
+        "build-force": "pnpm clean && pnpm turbo run build --force",
+        "dev": "pnpm turbo run dev --parallel",
         "start": "run-script-os",
         "start:windows": "cd packages/server/bin && run start",
         "start:default": "cd packages/server/bin && ./run start",
@@ -68,3 +69,4 @@
         "openai": "4.38.3"
     }
 }
+
